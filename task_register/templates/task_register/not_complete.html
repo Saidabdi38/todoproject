@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<h2>Shaqooyinka Aan La Dhamaystirin</h2>
+{% endblock title %}
+
+{% block content %}
+<form action="" method="post">
+    {% csrf_token  %}
+    From: <input type="date" name="fromdate"/>
+    To: <input type="date" name="todate"/>
+    <input type="submit" value="search"/>
+    <hr>
+<table>
+    <h3>Shaqooyinka Aan La Qaban</h3>
+    <thead>
+        <tr>
+            <td>ID</td>
+            <td>Full Name</td>
+            <td>Mobile</td>
+            <td>Zone</td>
+            <td>Shaqda</td>
+            <td>Created_date</td>
+            <td>Due_date</td>
+            <td>Completion</td>
+            <td>memo</td>
+        </tr>
+    </thead>
+    <tbody>
+        {% for task in task_list %}
+        <tr>
+            <td>{{task.id}}</td>
+            <td>{{task.fullname}}</td>
+            <td>{{task.tel}}</td>
+            <td>{{task.zoone}}</td>
+            <td>{{task.shaqada}}</td>
+            <td>{{task.creation_date}}</td>
+            <td>{{task.due_date}}</td>
+            <td>{{task.completion}}</td>
+            <td>{{task.memo}}</td>
+            <td>
+                <a href="{% url 'task_update' task.id %}">
+                    Update
+                </a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+</form>
+{% endblock content %}

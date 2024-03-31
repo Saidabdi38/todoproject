@@ -1,0 +1,68 @@
+* {
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+h1, h2, h3, h5, p, li {
+    text-align: center;
+    color: blue;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  thead, td {
+    text-align: left;
+    padding: 8px;
+  }
+  
+  tr:nth-child(even){background-color: peachpuff}
+  
+  thead {
+    background-color: green;
+    color: white;
+  }
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+
+th {
+  background-color: #04AA6D;
+  color: white;
+}
+
+button[type="submit"]:hover {
+    background-color: #45a049;
+  }
+
+  .navbar ul {
+    list-style-type: none;
+    background-color: blue;
+    padding: 0px;
+    margin: 0px;
+    overflow: hidden;
+  }
+
+  .navbar a{
+    color: white;
+    text-decoration: none;
+    padding: 15px;
+    display: block;
+    text-align: center;
+  }
+
+  .navbar li{
+    float: left;
+  }

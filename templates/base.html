@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Register</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <nav class="navbar">
+        <ul class="right-side">
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li> <a href="{% url 'about' %}">About</a></li>
+            {% if user.is_authenticated %}
+            <li><a href="{% url 'task_list' %}">Tasks List</a></li>
+            <li><a href="{% url 'not_complete' %}">Not Completed List</a></li>
+            <li><a href="{% url 'logoutaccount' %}">Logout ({{user.username}})</a></li>
+            {% else %}
+            <li><a href="{% url 'loginaccount' %}">Login</a></li>
+            <li><a href="{% url 'signupaccount' %}">Signup</a></li>
+            {% endif %}
+        </ul>
+    </nav>
+        <div>
+            {% block content %}
+            {% endblock content %}
+        </div>
+    
+</body>
+</html>
